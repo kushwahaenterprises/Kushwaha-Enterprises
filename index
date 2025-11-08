@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kushwaha Enterprises — Premium Packaging Solutions</title>
+  <meta name="description" content="Kushwaha Enterprises — Industrial packaging materials: BOPP Tapes, LD Polythene, Stretch Film, Packaging Machines" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* -------------------------
+       Variables & Reset
+       ------------------------- */
+    :root{
+      --bg: #f8f6f3;
+      --text: #1a1815;
+      --text-light: #5a5550;
+      --accent: #1a1815;
+      --accent-primary: #c43b3b;
+      --accent-secondary: #f5a623;
+      --border: #e8e4df;
+      --surface: #ffffff;
+      --surface-alt: #faf8f5;
+      --glass: rgba(26,24,21,0.04);
+      --card-shadow: 0 8px 24px rgba(26,24,21,0.08);
+      --radius: 6px;
+      --maxw: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%;height:auto}
+    h1,h2,h3,h4,h5,h6{font-family:"Playfair Display",serif;font-weight:700;line-height:1.1}
+
+    /* -------------------------
+       Layout
+       ------------------------- */
+    .container{max-width:var(--maxw);margin:0 auto;padding:40px 28px}
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:120;
+      background:var(--surface);
+      border-bottom:1px solid var(--border);
+      transition:box-shadow .28s ease;
+    }
+    .nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px 28px;gap:32px}
+    .brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
+    .brand .logo{
+      width:44px;height:44px;border-radius:6px;background:var(--accent-primary);padding:6px;display:flex;align-items:center;justify-content:center;overflow:hidden
+    }
+    .brand .logo img{width:100%;height:100%;object-fit:contain;filter:brightness(0) invert(1)}
+    .brand .title{font-family:"Playfair Display",serif;font-weight:700;color:var(--text);font-size:18px}
+    .brand .tag{font-size:11px;color:var(--text-light);font-weight:500;letter-spacing:.5px}
+
+    nav.primary{display:flex;gap:24px;align-items:center;flex:1;justify-content:center}
+    nav.primary a{padding:6px 12px;border-radius:4px;font-weight:500;font-size:14px;color:var(--text);transition:color .18s;position:relative}
+    nav.primary a::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--accent-primary);transition:width .18s}
+    nav.primary a:hover::after{width:20px}
+    nav.primary a.active::after{width:20px}
+    .btn-primary{background:var(--accent-primary);color:#fff;padding:12px 24px;border-radius:4px;font-weight:600;font-size:14px;box-shadow:0 4px 12px rgba(196,59,59,0.2);transition:all .18s;border:none;cursor:pointer;display:inline-block}
+    .btn-primary:hover{background:#a82f2f;box-shadow:0 6px 16px rgba(196,59,59,0.3)}
+    .hamb{display:none;background:transparent;border:0;font-size:22px;cursor:pointer}
+
+    /* -------------------------
+       HERO (premium intro)
+       ------------------------- */
+    .hero{padding:140px 0 80px;background:linear-gradient(135deg,var(--bg) 0%,var(--surface-alt) 100%)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+    .hero-content h1{font-size:52px;margin:0 0 20px;color:var(--text)}
+    .hero-content p.lead{color:var(--text-light);font-size:17px;max-width:52ch;margin:0 0 28px;line-height:1.7}
+    .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+    .hero-media{border-radius:6px;overflow:hidden;box-shadow:var(--card-shadow);transform:translateY(0);transition:transform .6s cubic-bezier(.2,.9,.25,1);aspect-ratio:4/3;background:var(--surface-alt)}
+    .hero-media:hover{transform:translateY(-8px)}
+    .hero-media img{width:100%;height:100%;object-fit:cover}
+
+    .feature-strip{display:flex;gap:14px;margin-top:24px;flex-wrap:wrap}
+    .feature{background:var(--surface);padding:12px 16px;border-radius:4px;border:1px solid var(--border);font-weight:600;color:var(--accent-primary);font-size:13px;display:flex;align-items:center;gap:6px}
+    .feature::before{content:'✓';font-weight:700}
+
+    /* -------------------------
+       CTA Section
+       ------------------------- */
+    section.alt{padding:100px 0;border-top:1px solid var(--border)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .text-block h2{font-size:38px;color:var(--text);margin:0 0 18px}
+    .text-block h3{font-size:24px;color:var(--accent-primary);margin:24px 0 12px;font-family:"Poppins",sans-serif;font-weight:600}
+    .text-block p{color:var(--text-light);line-height:1.8;margin:0 0 14px}
+    .text-block ul{color:var(--text-light);line-height:1.8;margin:16px 0;padding-left:24px}
+    .text-block li{margin:8px 0}
+    .big-img{border-radius:6px;overflow:hidden;box-shadow:var(--card-shadow);aspect-ratio:4/3}
+    .big-img img{width:100%;height:100%;object-fit:cover}
+
+    /* product cards */
+    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .prod{background:var(--surface);padding:32px 24px;border-radius:6px;border:1px solid var(--border);text-align:center;transition:all .28s;cursor:pointer}
+    .prod:hover{border-color:var(--accent-primary);box-shadow:0 12px 32px rgba(196,59,59,0.12);transform:translateY(-4px)}
+    .prod-icon{width:60px;height:60px;margin:0 auto 20px;background:rgba(196,59,59,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:28px}
+    .prod h4{margin:0 0 12px;color:var(--text);font-size:18px;font-family:"Playfair Display",serif}
+    .prod p{color:var(--text-light);font-size:14px;line-height:1.6}
+
+    /* why choose */
+    .why{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .why .card{background:var(--surface);padding:32px 28px;border-radius:6px;border:1px solid var(--border);text-align:center;transition:all .28s}
+    .why .card:hover{border-color:var(--accent-primary);box-shadow:0 12px 32px rgba(196,59,59,0.12)}
+    .why .card .icon{width:64px;height:64px;margin:0 auto 16px;background:rgba(245,166,35,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:32px}
+    .why .card h5{margin:0 0 12px;color:var(--text);font-family:"Playfair Display",serif;font-size:20px}
+    .why .card p{color:var(--text-light);font-size:14px;line-height:1.6}
+
+    /* gallery section */
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .gallery-item{border-radius:6px;overflow:hidden;aspect-ratio:1;background:var(--surface-alt);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-light);transition:all .28s;cursor:pointer;box-shadow:0 4px 12px rgba(26,24,21,0.06)}
+    .gallery-item:hover{transform:scale(1.02);box-shadow:0 8px 20px rgba(26,24,21,0.12)}
+
+    /* contact */
+    .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+    .contact-card{background:var(--surface);padding:40px;border-radius:6px;border:1px solid var(--border)}
+    .contact-card h2{margin:0 0 16px;color:var(--text)}
+    .contact-card p{color:var(--text-light);margin:0 0 24px}
+    .contact-form{display:grid;gap:16px}
+    .contact-form input,.contact-form textarea{padding:14px 16px;border-radius:4px;border:1px solid var(--border);background:var(--surface-alt);font-family:inherit;font-size:14px;color:var(--text);transition:border-color .18s}
+    .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent-primary)}
+    .contact-form button{padding:14px 20px;border-radius:4px;background:var(--accent-primary);color:#fff;border:none;font-weight:600;cursor:pointer;transition:background .18s}
+    .contact-form button:hover{background:#a82f2f}
+
+    .contact-info{display:grid;gap:24px}
+    .info-block{padding:20px;background:var(--surface-alt);border-radius:6px;border:1px solid var(--border)}
+    .info-block h3{margin:0 0 8px;color:var(--accent-primary);font-family:"Playfair Display",serif;font-size:16px}
+    .info-block p{color:var(--text-light);margin:0;font-size:14px}
+    .info-block a{color:var(--accent-primary);text-decoration:underline}
+
+    /* footer */
+    footer{background:var(--text);color:#fff;padding:60px 28px 20px}
+    .footer-inner{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;padding:0 0 40px}
+    .footer-section h4{font-size:14px;font-weight:700;margin:0 0 16px;text-transform:uppercase;letter-spacing:.5px}
+    .footer-section a{display:block;color:#ccc;font-size:14px;margin:8px 0;transition:color .18s}
+    .footer-section a:hover{color:#fff}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;text-align:center;color:#999;font-size:13px}
+
+    /* floating whatsapp */
+    .fab{position:fixed;right:24px;bottom:24px;z-index:140;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#25d366,#128c7e);box-shadow:0 8px 24px rgba(0,0,0,0.2);cursor:pointer;transition:transform .18s}
+    .fab:hover{transform:scale(1.08)}
+
+    /* reveal animation */
+    .reveal{opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.2,.9,.25,1)}
+    .reveal.show{opacity:1;transform:none}
+
+    /* responsive */
+    @media (max-width:1100px){
+      .hero-grid{grid-template-columns:1fr;gap:40px}
+      .products-grid{grid-template-columns:repeat(2,1fr)}
+      .why{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:760px){
+      .nav-inner{padding:14px 16px;gap:12px}
+      .hero{padding:120px 0 60px}
+      .hero-grid{gap:28px;padding:0 16px}
+      .hero-content h1{font-size:36px}
+      .hero-content p.lead{font-size:15px}
+      .split{grid-template-columns:1fr;gap:32px}
+      .products-grid{grid-template-columns:1fr}
+      .why{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+      nav.primary{display:none}
+      .hamb{display:block}
+      .footer-inner{grid-template-columns:repeat(2,1fr);gap:24px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="top">
+    <div class="nav-inner">
+      <a class="brand" href="#home">
+        <div class="logo" aria-hidden="true">
+          <img src="assets/logo.png" alt="Kushwaha Enterprises Logo" id="logoImg">
+        </div>
+        <div>
+          <div class="title">Kushwaha Enterprises</div>
+          <div class="tag">PACKAGING SOLUTIONS</div>
+        </div>
+      </a>
+
+      <nav class="primary" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn-primary">Get Quote</a>
+
+      <button class="hamb" aria-label="Open menu" onclick="toggleMobile()">☰</button>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobileNav" style="display:none;padding:16px;background:var(--surface);border-top:1px solid var(--border);grid-template-columns:1fr">
+      <a href="#home" onclick="toggleMobile()" style="padding:8px;display:block">Home</a>
+      <a href="#about" onclick="toggleMobile()" style="padding:8px;display:block">About</a>
+      <a href="#products" onclick="toggleMobile()" style="padding:8px;display:block">Products</a>
+      <a href="#why" onclick="toggleMobile()" style="padding:8px;display:block">Why Us</a>
+      <a href="#contact" onclick="toggleMobile()" style="padding:8px;display:block">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero" id="home" role="main">
+    <div class="hero-grid">
+      <div class="hero-content reveal">
+        <h1>Premium Packaging Solutions for Growing Businesses</h1>
+        <p class="lead">Industrial-grade BOPP tapes, LD polythene, stretch film, and packaging machines. Trusted by manufacturers across India for quality, reliability, and cost-effective solutions.</p>
+
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#products">Explore Products</a>
+          <a href="#contact" style="padding:12px 24px;border-radius:4px;border:2px solid var(--accent-primary);font-weight:600;font-size:14px;color:var(--accent-primary);background:transparent;transition:all .18s;display:inline-block">Request Quote</a>
+        </div>
+
+        <div class="feature-strip">
+          <div class="feature">Fast bulk supply & logistics</div>
+          <div class="feature">Custom printing services</div>
+          <div class="feature">Expert technical support</div>
+        </div>
+      </div>
+
+      <div class="hero-media reveal" aria-hidden="true">
+        <img src="assets/hero.jpg" alt="Premium packaging materials" />
+      </div>
+    </div>
+  </main>
+
+  <!-- ABOUT / COMMITMENT -->
+  <section class="alt" id="about">
+    <div class="container">
+      <div class="split reveal">
+        <div class="text-block">
+          <h2>Why Choose Kushwaha Enterprises?</h2>
+          <p>We combine premium product quality with industrial-scale operations to deliver reliable packaging solutions. Our 20+ years of expertise ensures consistent excellence across every product line.</p>
+          
+          <h3>Our Commitment</h3>
+          <p>Quality meets consistency. We source premium raw materials from certified suppliers and maintain strict quality control throughout production. Your packaging protects products and elevates your brand.</p>
+          
+          <p>We support custom sizes, branded printing, and technical machinery recommendations to optimize your packaging line from start to finish.</p>
+        </div>
+
+        <div class="big-img">
+          <img src="assets/about.jpg" alt="Our manufacturing facility" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS show -->
+  <section class="alt" id="products">
+    <div class="container reveal">
+      <h2 style="text-align:center;margin-bottom:16px">Our Product Range</h2>
+      <p style="text-align:center;color:var(--text-light);max-width:600px;margin:0 auto 48px">Premium packaging materials for every industry need. Bulk quantities available with custom options for specialized requirements.</p>
+
+      <div class="products-grid">
+        <div class="prod reveal">
+          <div class="prod-icon">📦</div>
+          <h4>BOPP Tapes</h4>
+          <p>Self-adhesive tapes in multiple widths with various adhesive strengths. Custom printing and packaging available for branding.</p>
+        </div>
+        <div class="prod reveal">
+          <div class="prod-icon">🎁</div>
+          <h4>LD Polythene</h4>
+          <p>Protective sheets and bags for safe packaging. Customizable sizes for different product dimensions and weights.</p>
+        </div>
+        <div class="prod reveal">
+          <div class="prod-icon">🔄</div>
+          <h4>Stretch Film</h4>
+          <p>Machine and hand rolls for pallet wrapping and transit protection. Superior adhesion and puncture resistance.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:48px">
+        <p style="color:var(--text-light);margin-bottom:20px">Looking for custom solutions?</p>
+        <a href="#contact" class="btn-primary">Request Custom Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="alt" id="why">
+    <div class="container reveal">
+      <h2 style="text-align:center;margin-bottom:16px">Why Kushwaha?</h2>
+      <p style="text-align:center;color:var(--text-light);max-width:700px;margin:0 auto 48px">We deliver exceptional value through quality products, expert support, and efficient operations designed for your success.</p>
+
+      <div class="why">
+        <div class="card reveal">
+          <div class="icon">⚡</div>
+          <h5>Fast Supply</h5>
+          <p>Reliable bulk inventory with same-day dispatch across Delhi NCR and major cities. Consistent availability you can count on.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="icon">✓</div>
+          <h5>Quality Assured</h5>
+          <p>Every batch undergoes rigorous quality inspection ensuring consistent performance and durability for your applications.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="icon">🎨</div>
+          <h5>Custom Solutions</h5>
+          <p>Brand your packaging with custom printing services. Custom sizes, specifications, and technical recommendations included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="alt" id="gallery">
+    <div class="container reveal">
+      <h2 style="text-align:center;margin-bottom:16px">Product Gallery</h2>
+      <p style="text-align:center;color:var(--text-light);margin-bottom:40px">See our manufacturing quality and product range in action.</p>
+
+      <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/tape-black.png" alt="Black Adhesive Tape"></div>
+      <div class="gallery-item"><img src="assets/tape-double.png" alt="Double Sided Tape"></div>
+      <div class="gallery-item"><img src="assets/tape-colored.png" alt="Colored Tapes"></div>
+      <div class="gallery-item"><img src="assets/tape-brown.png" alt="Brown Packaging Tape"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="alt">
+    <div class="container reveal">
+      <h2 style="text-align:center;margin-bottom:16px">Get Started Today</h2>
+      <p style="text-align:center;color:var(--text-light);margin-bottom:40px">Send your requirements and we'll provide customized solutions with competitive pricing.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h2>Quick Quote</h2>
+          <p>Fill in your requirements and our team will respond within 24 hours with detailed quotes and product recommendations.</p>
+          <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+            <input name="name" placeholder="Full Name" required>
+            <input name="contact" placeholder="Email or Phone" required>
+            <input name="product" placeholder="Product Interest">
+            <textarea name="message" placeholder="Tell us your requirements, quantities, or special requests..." rows="5" required></textarea>
+            <button type="submit">Send Request</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-block reveal">
+            <h3>📍 Office Location</h3>
+            <p>1/129-F Gulati Motor Market<br/>Ganda Nala Bazar<br/>Kashmere Gate, Delhi-110006</p>
+          </div>
+
+          <div class="info-block reveal">
+            <h3>📞 Contact Info</h3>
+            <p><a href="tel:+919873075585">+91 98730 75585</a><br/><a href="mailto:jitendersingh1010@gmail.com">jitendersingh1010@gmail.com</a></p>
+          </div>
+
+          <div class="info-block reveal">
+            <h3>🕐 Business Hours</h3>
+            <p>Monday - Saturday<br/>9:30 AM - 7:00 PM<br/>Sunday - Closed</p>
+          </div>
+
+          <div class="info-block reveal">
+            <h3>💬 Live Chat</h3>
+            <p><a href="https://wa.me/919873075585">Message us on WhatsApp</a> for instant support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>Company</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#why">Why Us</a>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <a href="#products">BOPP Tapes</a>
+        <a href="#products">LD Polythene</a>
+        <a href="#products">Stretch Film</a>
+        <a href="#products">Machinery</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#contact">Contact Us</a>
+        <a href="#contact">Request Quote</a>
+        <a href="#contact">Order Status</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="tel:+919873075585">Call Us</a>
+        <a href="https://wa.me/919873075585">WhatsApp</a>
+        <a href="mailto:jitendersingh1010@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Kushwaha Enterprises. All rights reserved. | Premium Packaging Solutions for India's Manufacturing Industry
+    </div>
+  </footer>
+
+  <!-- FAB -->
+  <a class="fab" href="https://wa.me/919873075585" target="_blank" aria-label="Chat on WhatsApp" title="Chat with us">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </a>
+
+  <script>
+    // ---------- Mobile nav toggle ----------
+    function toggleMobile(){
+      const el = document.getElementById('mobileNav');
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // ---------- Smooth in-page scroll + nav highlight ----------
+    (function(){
+      const links = document.querySelectorAll('a[href^="#"]');
+      const nav = document.querySelectorAll('nav.primary a');
+      function offsetTop(el){ return el ? el.getBoundingClientRect().top + window.scrollY : 0; }
+      links.forEach(a=>{
+        a.addEventListener('click', e=>{
+          const href = a.getAttribute('href');
+          if(href.startsWith('#')){
+            const target = document.querySelector(href);
+            if(target){
+              e.preventDefault();
+              window.scrollTo({ top: offsetTop(target) - 100, behavior: 'smooth' });
+            }
+            const m = document.getElementById('mobileNav'); 
+            if(m && m.style.display==='block') m.style.display='none';
+          }
+        });
+      });
+
+      const sections = Array.from(document.querySelectorAll('main, section'));
+      function onScroll(){
+        const y = window.scrollY + 110;
+        let current = sections.slice().reverse().find(s => offsetTop(s) <= y);
+        nav.forEach(n => n.classList.remove('active'));
+        if(current && current.id){
+          const link = document.querySelector('nav.primary a[href="#' + current.id + '"]');
+          if(link) link.classList.add('active');
+        }
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    })();
+
+    // ---------- Reveal animations ----------
+    (function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting) entry.target.classList.add('show');
+        });
+      },{threshold:0.12});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    })();
+
+    // ---------- header shadow on scroll ----------
+    (function(){
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', ()=>{
+        if(window.scrollY > 24) header.style.boxShadow = '0 4px 12px rgba(26,24,21,0.08)';
+        else header.style.boxShadow = 'none';
+      });
+    })();
+  </script>
+</body>
+</html>
